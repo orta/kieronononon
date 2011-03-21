@@ -21,3 +21,7 @@ end
 get '/media' do
   erb :media
 end
+
+get '/kommunique' do
+  erb :read
+end

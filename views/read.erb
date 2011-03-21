@@ -1,0 +1,113 @@
+<style>
+
+.container_12{
+  color: white;
+}
+.komm{
+  text-align: center;
+  margin-bottom: 32px;
+}
+.komm img{
+  -moz-box-shadow: 0px 0px 5px #999999;
+  -webkit-box-shadow: 0px 0px 5px #999999
+}
+.article{
+  color: white;
+} 
+.section{
+  color: black;
+}
+
+.image {
+  position: relative;
+}
+.image:hover h2{
+  display: block;
+}
+
+.image h2 {
+  display: none;
+  position: absolute;
+  top: 200px;
+  left: 80px;
+  width: 100%;
+  color: #fff;
+}
+
+.image span {
+  float: left;
+  clear: left;
+  color: white;
+  font: bold 24px/45px Helvetica, Arial, Sans-Serif;
+  letter-spacing: -1px;
+  background: rgb(0, 0, 0); /* fallback color */
+  background: rgba(0, 0, 0, 0.5);
+  padding: 3px 10px;
+}
+.image a{
+  color: white;
+}
+.alt .komm p{
+  color: black;
+}
+.komm p{
+  text-align: left;
+  color:  white;
+  width: 290px;
+  margin-left: 90px;
+}
+
+.issue{
+  padding-top: 64px;
+}
+
+.alt{
+  background-color: #EBEBEB;
+  color: black;
+}
+
+</style>
+
+<div class="article">
+ <div class="section container_12">
+  <h1>Kierononononn Kommunique</h1>
+  <div class="e-ease ee:wwig" id="komm_heading" ><?php include("inc/komm_heading.txt");?></div>
+  </div>
+  <div class="empty">
+    <?php
+  $dir_handle = scandir("./komm/thumbs", 1) or die("Unable to open /komm/");
+
+  // Loop through folders of the project dir
+  foreach( $dir_handle as $issueName){
+    if($issueName == ".DS_Store" || $issueName == "." || $issueName == ".." || $issueName == "index.php" ) continue;
+    
+    $i++;
+    if($i % 2) {
+      if($switch){
+        
+        echo '<div class="clear"></div></div><div class = "issue container_12  ">';
+      }else{
+      echo '<div class="clear"></div></div><div class = "issue container_12 alt">';    
+      } 
+      $switch = !$switch;     
+    }
+    $name = str_replace(".jpeg", "", $issueName);
+    $pdfurl = str_replace("jpeg", "pdf", $issueName);
+    $htmlurl = str_replace("jpeg", "html", $issueName);
+    // echo "komm/" . $pdfurl;
+    echo "<div class = 'komm image grid_6'>
+    <img src = \"komm/thumbs/$issueName\">
+    <h2><span>$name</span>";
+    if(file_exists("komm/" . $pdfurl)) echo "<span><a href=\"komm/$pdfurl\">pdf</a></span>";
+    if(file_exists("komm/" . $htmlurl))echo "<span><a href=\"komm/$htmlurl\">html</a></span>";
+    echo "</h2> <p>";
+    $url = str_replace("jpeg", "txt", $issueName);
+    print implode("",file("komm/overview/" .$url));    
+    echo "</p> 
+    </div>";    
+  }
+  ?><div class="clear"></div>
+  </div>
+  </div>
+  </div>
+  </div>
