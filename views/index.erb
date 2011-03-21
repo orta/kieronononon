@@ -55,15 +55,7 @@
       <hr>
       <div class="clear"></div>
       <div class="grid_4 read">
-        <?php
-      $dir_handle = scandir("./komm/thumbs", 1) or die("Unable to open /komm/");
-      // grab latest thumbnail
-      foreach( $dir_handle as $issueName){
-        if($issueName == ".DS_Store" || $issueName == "." || $issueName == ".." || $issueName == "index.php" ) continue;            
-        echo '<img src = "komm/thumbs/' . $issueName . '" id="current_issue" alt="current kierononon kommunique issue">';
-        break;
-      } 
-      ?>
+     <img src = "komm/thumbs/" id="current_issue" alt="current kierononon kommunique issue">
       <h3>Kierononon Kommunique</h3>
     </div>
 
@@ -158,65 +150,7 @@ $(document).ready(function() {
   if(window.location.hash == "thanks"){
 
   }
-  moveLittleMen();
-  getMessages();
 })
-
-
-function getMessages(){
-
-  $.get('php/messages.php', function(data) {
-    $("#comment-box-playground").append(data);
-    if(FB.XFBML) FB.XFBML.Host.parseDomElement(document.getElementById("comment-box-playground"));
-    $('#comment-box').append($('#comment-box-playground .comment').remove()); 
-
-  });
-  setTimeout( getMessages , 10000);
-
-}
-
-
-function moveLittleMen(){
-  $(".comment").each(function(i){
-    var man = $(this);
-    if(man.attr("pause") > 0){
-      var pause = man.attr("pause") * 1;
-      if(pause == 10) {
-        $(this).css("width", "310px");
-        $(".comment-bubble" ,this).fadeIn(); 
-      }
-      if(pause == 1) {
-
-        $(".comment-bubble" ,this).hide(); 
-        $(this).css("width", "30px");
-      }
-      man.attr("pause", pause - 1 );
-
-    }else{  
-      var rand = Math.floor(Math.random()*8);
-      if(rand == 2){
-        if(man.attr("hasmoved") != "true"){
-          man.attr("pause", "10");    
-          man.attr("hasmoved", "true");    
-        }
-      }
-
-      var x = parseInt(man.css("left"))   ;
-      if(x < -310 || x > 1000){
-        man.remove();
-      }
-
-      var dist = Math.floor(Math.random()*60) + 20;
-      if( man.hasClass("alt")){
-        man.animate({"left": "-="+ dist +"px"}, 800 ,"swing");
-      }else{
-        man.animate({"left": "+="+ dist +"px"}, 800, "swing");
-      }
-    }
-  })
-  setTimeout( moveLittleMen ,800);
-}
-
 
 </script>
 
@@ -270,6 +204,3 @@ google.setOnLoadCallback(initialize);
 
 </script>
 
-
-
-<?php include "style/footer.php"; ?>
