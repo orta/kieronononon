@@ -9,3 +9,7 @@ end
 get '/music' do
   erb :music  
 end
+
+get '/band' do
+  erb :band  
+end
