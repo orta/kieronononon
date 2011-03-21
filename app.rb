@@ -22,6 +22,10 @@ get '/media' do
   erb :media
 end
 
-get '/kommunique' do
+get /kommunique|komm|read/ do
   erb :read
+end
+
+get '/gift' do
+  erb :gift
 end
