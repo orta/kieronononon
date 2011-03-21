@@ -1,0 +1,5 @@
+- look into simplifying routes
+- move assets to s3
+- add a hash for the komms, or use static HTML
+- think about the k-hole pics
+- get the template blank thing working for the ajax page
