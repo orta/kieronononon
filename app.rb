@@ -7,7 +7,7 @@ get '/' do
 end
 
 get '/ajax/music' do
-  erb :ajax_cds, layout => :blank
+  erb :ajax_cds, layout => :none
 end
 
 get '/music' do
