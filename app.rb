@@ -13,3 +13,7 @@ end
 get '/band' do
   erb :band  
 end
+
+get '/ajax/music' do
+  erb :ajax_cds, layout => :blank
+end

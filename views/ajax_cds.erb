@@ -1,0 +1,61 @@
+<style>
+
+#music {
+  margin-top: 32px;
+  width: 880px;
+}
+#music img{
+  padding: 4px;
+}
+.music_info{
+  margin-top: 18px;
+  text-align: left;
+  width:  800px;
+  color:  white;
+}
+
+.music_info h2{
+    background: url(http://brutaltechnopunk.com/assets/images/header-bg.png) repeat-x;
+    color:  black;
+    padding-bottom: 0;
+    padding-top: 40px;
+    height: 48px;
+    line-height: 65px;
+    font-size: 48px;
+}
+
+#music a.active {
+  background: url(http://brutaltechnopunk.com/assets/images/slider.png) no-repeat;
+  background-position: center bottom;
+  padding-bottom: 20px;
+}
+
+.tmp, .ituneslp{ display: none; }
+
+</style>
+
+<center id = "music">
+  <a href= "http://kieronononon.bandcamp.com" 
+    onmouseover="$('#music a').removeClass('active'); $(this).addClass('active');$('.tmp, .ituneslp').hide();$('.ttd').show();">
+    <img src = "assets/images/theresthisdragon420.jpg" width=220>
+  </a>
+  <a class="active" href= "http://bit.ly/2SMQDM"  
+    onmouseover="$('#music a').removeClass('active'); $(this).addClass('active');$('.ttd, .tmp').hide();$('.ituneslp').show();">
+    <img src = "assets/images/music/cover-btps.jpg" width=220 >
+  </a>
+  <a href= "http://www.brutaltechnopunk.com/php/download_magic?file=__threemanparty.zip" 
+    onmouseover="$('#music a').removeClass('active'); $(this).addClass('active');$('.ituneslp, .ttd').hide();$('.tmp').show();">
+    <img src = "assets/images/music/cover-tmp.jpg" width=220>
+  </a>
+<div class="music_info">
+  <h2 class="ttd">There&rsquo;s this Dragon</h2>
+  <p class="ttd">30-something awesome minutes of brand new brutaltechnopunk. Your birthday has come early, and it's called "There's this dragon..."</p>
+
+  <h2 class="ituneslp">Brutal Techno Surprise - iTunes LP</h2>
+  <p class="ituneslp">The first free indie iTunes LP on the internet. Featuring videos, images, songs and other goodies. It's a brutaltechno bonanza.</p>
+  
+  <h2 class="tmp">three man party</h2>
+  <p class="tmp">'Three Man Party', Kieronononon's fourth EP in three years, adds even more styles to their brutaltechnopunk mix. Horrors-style garage psych, death metal and even more B-movie shtick are thrown together on the sludgy 'And You're Not James Bond Either', while 'Eventually He Did' turns out as a free-form, spoken word grindcore number.</p>
+  
+</div>
+</center>
