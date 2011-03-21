@@ -1,6 +1,6 @@
 require 'rubygems' 
 require 'sinatra' 
 
-get '/' do 
-  redirect '/index.html' 
+get '/' do
+  erb :index  
 end

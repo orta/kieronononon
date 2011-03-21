@@ -1,0 +1,259 @@
+@font-face {
+	font-family: 'aldo';
+	src: url('../fonts/aldo-webfont.eot');
+	src: local('☺'), url('../fonts/aldo-webfont.woff') format('woff'), url('../fonts/aldo-webfont.ttf') format('truetype'), url('../fonts/aldo-webfont.svg#webfontkaghEZ6E') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.header,article,section,#nav {
+  display: block;
+}
+
+hr{
+  margin-bottom: 10px !important;
+  margin-top: 10px !important;
+}
+
+a {
+  color: #B7B7B7;
+}
+
+a:hover,a:active,a:visited {
+  color: #989898;
+}
+
+body {
+  background-color: black;
+  min-size: 960px;
+  margin-bottom: 20px;
+}
+h1,h2,h3,h4,#sb-title-inner {
+  font-family: "aldo",sans-serif !important;
+}
+.info li {
+  list-style: none;
+}
+.header {
+  display: block;
+  background: url(../images/header-bg.png) repeat-x;
+  height: 64px;
+  margin-bottom: 32px;
+}
+.header .logo {
+  position: absolute;
+  top: 10px;left :10px;
+  pointer-events: none;
+  z-index: 5;
+  -webkit-transition: all 0.5s ease-in-out;
+}
+.header .done {
+  top: -40px;
+  left: -30px;
+  -webkit-transform: scale(0.7) rotate(340deg);
+  -moz-transform: scale(0.7) rotate(340deg);
+}
+.header ul#subnav{
+	clear: both;
+	text-align: center;
+	margin-top: 6px;
+}
+
+.header ul#subnav li{
+	display: inline;
+
+}
+.header ul#subnav li a{
+	padding-top: 16px;
+	color:#747474;
+	}
+#headline #banner {
+  margin: auto 0px;
+  margin-top: 32px;
+  width :1040px;
+  height: 500px;
+}
+
+#nav {
+  text-align: center;
+}
+
+#nav>ul {
+  margin: 0 auto;
+  padding: 0;
+  cursor: default;
+  list-style-type: none;
+  font-family: "aldo",sans-serif;
+  font-size: 3em;
+  width: 760px;
+}
+#nav>ul>li {
+  margin: 0px;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+#nav > ul > li a:visited {
+  color: #2C2C2C;
+}
+#nav > ul > li a {
+  display: block;
+  height: 42px;
+  padding: 22px 10px 0px 10px;
+  border-right: 1px solid #555;
+  text-align: center;
+  color: #2C2C2C;
+  text-decoration: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+#nav>ul>li a:hover {
+  background: url(../images/header-hover-bg.png) repeat-x;
+  color: black;
+}
+#nav>ul>li a:active,#nav ul>li a.active {
+  -moz-box-shadow: inset 0 5px 1em #793F08;
+  -webkit-box-shadow: inset 0 5px 1em #793F08;
+  position: relative;
+}
+#nav>ul>li:last-child a {
+  border-right: none;
+}
+#nav ul ul {
+  display: none;
+}
+/* + is the sibling selector */
+#nav ul li a.active + ul {
+  text-align: left;
+  background: url(../images/long-bg.png) repeat-x;
+  background-color: #bf4f03;
+  display: block;
+  position: absolute;
+  width: 340px;
+  z-index: 99;
+  right: 0px;
+  -moz-box-shadow: inset 0 5px 1em #793F08;
+  -webkit-box-shadow: inset 0 5px 1em #793F08;
+  padding: 10px 20px;
+  border-bottom-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  -moz-border-radius-bottomleft: 32px;
+  -moz-border-radius-bottomright: 32px;
+}
+#nav ul li a.active + ul li {
+  float: left;
+  width: 120px;
+  margin: 8px 25px;
+  font-size: 0.6em;
+  list-style: none;
+  background-color: rgba(0,0,0,0.5);
+}
+#nav ul li a.active + ul li a {
+  width: auto;
+  height: 40px;
+  color: #FFFFFF;
+}
+#nav ul form {
+  margin-top: 32px;
+}
+#nav ul label {
+  text-align: left;
+  font-size: 18px ;
+  float: left;
+  margin-bottom: 6px;
+}
+#nav ul ul a {
+  width: auto;
+  display: inline;
+  padding: 0;
+  margin: 0;
+}
+
+#logged_in_submit {
+  float: left;
+}
+
+.FB_profile_pic {
+  float: right;
+  margin-top: -8px;
+  margin-bottom: 8px;
+}
+#nav ul .fbconnect_login_button {
+/*  float: right;
+  margin-top: 2px;
+  height: 24px;
+  padding: 0px;
+*/
+}
+
+#nav ul .division{
+  width: 160px;
+  float: left;
+  text-align: left;
+  height: 24px;
+}
+
+#nav ul .division p{
+  margin-bottom: 0;
+}
+
+#RES_ID_fb_login {
+  height: 25px;
+  float: left;
+}
+#RES_ID_fb_login img{
+  float: left;
+}
+
+#fb_logout {
+  font-family: helvetica,sans-serif;
+  font-size: 14px;
+  margin: 0;
+  float: right;
+  display: inline;
+  height: auto;
+  margin-right: 8px;
+}
+
+#name{
+  float: left;
+  height: 18px;
+}
+#nav ul ul p {
+  margin-top: 4px;
+  font-size: 12px;
+  font-family: helvetica,arial,sans-serif;
+  float: left;
+}
+
+#nav ul #message {
+  width: 336px;
+  font-family: helvetica,arial,sans-serif;
+  font-size: 18px;
+  border: 1px solid #97b5d2;
+  background-color: #f7fcff;
+  color: #25313c;
+  float: left;
+  margin-bottom: 8px;
+  height: 72px;
+  word-wrap: break-word
+}
+
+#nav ul #submit{
+  height : 32px;
+}
+
+#nav ul input:focus {
+  background-color: #f9f8e4;
+}
+a.stbutton {
+  padding: 0px !important;
+  background: none !important;
+}
+input,.edithover {
+  color: black;
+}
+.FB_name{
+  text-align: right;
+}

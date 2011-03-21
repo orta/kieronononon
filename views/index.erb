@@ -1,0 +1,275 @@
+<link rel="stylesheet" href="assets/stylesheets/index.css" type="text/css" media="screen" title="no title" >
+<link rel="stylesheet" href="assets/javascripts/shadowbox/shadowbox.css" type="text/css" media="screen" title="no title" >
+
+<center>
+  <div class="section" id="headline">
+    <div id="banner">
+      <img src="assets/images/banner/banner6.jpg" width="1040" height="500" alt="Banner1">
+      <img src="assets/images/banner/banner2.jpg" width="1040" height="500" alt="Banner1" style='display:none'>
+      <img src="assets/images/banner/banner1.jpg" width="1040" height="500" alt="Banner1" style='display:none'>
+      <img src="assets/images/banner/banner2.jpg" width="1040" height="500" alt="Banner1" style='display:none'>
+    </div> 
+  </div>
+</div>
+</center>
+
+<div class="section" id="site-page" class="container_12">
+  <!-- comments go in playground for facebook setup, then moved in to commentbox, prevents unstyled content coming through -->
+  <!-- <div class="article" id= "comment-box-playground" style="display:none">&nbsp;</div>
+  <div class="article" id= "comment-box">        
+
+    <div style="left:700px" class="comment alt kierononon">
+      <img src="assets/images/guyorange.png" alt="" />
+      <p style="display:none;">Leave us a comment by clicking on <STRONG>SOCIAL</STRONG> above - Kierononon <img src="http://www.gravatar.com/avatar/f116cb3be23153ec08b94e8bd4dbcfeb.png" class="gravatar"></p>
+    </div>
+  </div>
+
+
+  <div class="clear"></div> -->
+  
+  <div class="section container_12" id="page-content">
+
+    <div class=" grid_6 content-cd">
+      <img src="assets/images/dragon-cd.jpeg" id="case" alt="Jewel Ituneslp">
+      <img src="assets/images/cd.jpg" id="CD"  alt="Cd">
+      <h3>Click to download our free iTunes EP or Music</h3>
+    </div>
+
+    <div class="article grid_6">
+      <h1 class="e-ease " id="home_heading" ><?php include("inc/home_heading.txt");?></h1>
+      <p class="e-ease ee:wwig" id="home_heading_body" ><?php include("inc/home_heading_body.txt");?></p>
+      <p>
+
+        <div class=" alpha grid_2 player">
+          <a href="mp3s/02 March Of The Bugs.mp3" class="sm2_button" title="play March of the Bugs" >March of the Bugs</a>
+        </div>
+        <div class="grid_2 player">
+          <a href="mp3s/05 No Chicks, No Beer.mp3" class="sm2_button" >No Chicks, No Beers</a>
+        </div>
+        <div class=" omega grid_2 player">
+          <a href="mp3s/06 Megaman 9.mp3" class="sm2_button" href="#">Megaman 9</a>
+        </div>
+
+      </div>
+      <div class="clear" style="height:26px"></div>
+      <hr>
+      <div class="clear"></div>
+      <div class="grid_4 read">
+        <?php
+      $dir_handle = scandir("./komm/thumbs", 1) or die("Unable to open /komm/");
+      // grab latest thumbnail
+      foreach( $dir_handle as $issueName){
+        if($issueName == ".DS_Store" || $issueName == "." || $issueName == ".." || $issueName == "index.php" ) continue;            
+        echo '<img src = "komm/thumbs/' . $issueName . '" id="current_issue" alt="current kierononon kommunique issue">';
+        break;
+      } 
+      ?>
+      <h3>Kierononon Kommunique</h3>
+    </div>
+
+    <div class=" article grid_4 watch">
+      <a rel="shadowbox;width=853;height=505;player=swf" title="Kieronononon - March of the Bugs" href="http://www.youtube.com/v/ZiBqaZb09to&hl=en&fs=1&rel=0&autoplay=1&amp;hl=en&amp;fs=1&amp;rel=0&amp;autoplay=1&amp;fmt=22"> <img src="assets/images/youtube.jpg"  alt="Youtube"></a>
+
+      <h3>Watch our vids</h3>
+    </div>
+
+    <div class="article grid_4 hole">
+      <img id = "khole" src="assets/images/kholed.png" alt="Kholed">
+
+      <div id="khole_banner">
+        <img src="assets/images/kholed1.jpg" alt="Kholed1">
+        <img src="assets/images/kholed2.jpg" style="display:none" alt="Kholed2">
+        <img src="assets/images/kholed3.jpg" style="display:none" alt="Kholed3">
+      </div>
+      <div class="clear"></div>
+      <h3>Got Kholed lately?</h3>
+    </div>
+
+    <hr />
+
+    <div class=" article grid_4 info" id="gigs">
+      <h2>Upcoming Gigs</h2>
+      <div id="lastfm">
+        &nbsp;
+      </div>
+    </div>
+    <div class=" article grid_4 info" id="twitter">
+      <h2>Twitter</h2>
+      <div id="tweets">
+
+      </div>
+
+    </div>
+    <div class=" article grid_4 info">
+      <h2>Contact</h2>
+      <ul>
+        <li>Enquiries - <a href="mailto:band@technopunk.me?subject=Query">band@technopunk.me</a></li>
+        <li>Site / Design - <a href="mailto:orta@technopunk.me">orta@technopunk.me</a></li> 
+        <li><a href="http://roxxor2.co.uk"><img src="assets/images/luv_roxxor.png" alt="roxXOR2 logo" id="roxxor"/>
+        </a></li>
+      </ul>
+
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+ 
+<script>
+$(document).ready(function() {
+
+  $('#banner').cycle({
+    delay:  1000, 
+    speed:  1000
+  });
+
+  $(".logo").addClass("done");
+
+  Shadowbox.init({
+    // a darker overlay looks better on this particular site
+    overlayOpacity: 0.8
+  });
+
+  $("#khole_banner").cycle({
+    speed:  20
+  });  
+
+
+
+  $(".content-cd").click(function(i){
+    $.get('ajax/music.php', function(data) {
+      Shadowbox.open({
+        content:    data,
+        player:     "html",
+        title:      "Kierononononon Music",
+        height:     550,
+        width:      880
+      });
+    });
+  });
+
+  $(".hole").click(function(i){
+    window.location.href = "khole"
+  });
+
+  $(".read").click(function(i){
+    window.location.href = "kommunique"
+  });
+
+  if(window.location.hash == "thanks"){
+
+  }
+  moveLittleMen();
+  getMessages();
+})
+
+
+function getMessages(){
+
+  $.get('php/messages.php', function(data) {
+    $("#comment-box-playground").append(data);
+    if(FB.XFBML) FB.XFBML.Host.parseDomElement(document.getElementById("comment-box-playground"));
+    $('#comment-box').append($('#comment-box-playground .comment').remove()); 
+
+  });
+  setTimeout( getMessages , 10000);
+
+}
+
+
+function moveLittleMen(){
+  $(".comment").each(function(i){
+    var man = $(this);
+    if(man.attr("pause") > 0){
+      var pause = man.attr("pause") * 1;
+      if(pause == 10) {
+        $(this).css("width", "310px");
+        $(".comment-bubble" ,this).fadeIn(); 
+      }
+      if(pause == 1) {
+
+        $(".comment-bubble" ,this).hide(); 
+        $(this).css("width", "30px");
+      }
+      man.attr("pause", pause - 1 );
+
+    }else{  
+      var rand = Math.floor(Math.random()*8);
+      if(rand == 2){
+        if(man.attr("hasmoved") != "true"){
+          man.attr("pause", "10");    
+          man.attr("hasmoved", "true");    
+        }
+      }
+
+      var x = parseInt(man.css("left"))   ;
+      if(x < -310 || x > 1000){
+        man.remove();
+      }
+
+      var dist = Math.floor(Math.random()*60) + 20;
+      if( man.hasClass("alt")){
+        man.animate({"left": "-="+ dist +"px"}, 800 ,"swing");
+      }else{
+        man.animate({"left": "+="+ dist +"px"}, 800, "swing");
+      }
+    }
+  })
+  setTimeout( moveLittleMen ,800);
+}
+
+
+</script>
+
+<script src="assets/javascripts/jquery.cycle.lite.min.js"></script>
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAfhcL9onk1IwFcC4_Gg8y8BShhZBixF0XVSHkifztW3HT4Lh_chTxSkyhhyLDbWZIKal8vo-EDqgudw"></script>
+
+<script src="assets/javascripts/shadowbox/shadowbox.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="assets/javascripts/soundmanager2-nodebug-jsmin.js"></script>
+<script type="text/javascript" src="assets/javascripts/inlineplayer.js"></script>
+<script>
+google.load("feeds", "1");
+soundManager.url = 'assets/javascripts/';
+
+function initialize() {
+
+  var feed = new google.feeds.Feed("http://ws.audioscrobbler.com/1.0/artist/Kieronononon/events.rss");
+  feed.load(function(result) {
+    if (!result.error) {
+      if(result.feed.entries.length){
+        var results = "<ul>";
+        for (var i = 0; i < result.feed.entries.length; i++) {
+          var entry = result.feed.entries[i];
+          
+          results += "<li><i>" + entry.content.split("\n")[0] + "</i><br/><a href='" + entry.link + "'>" + entry.title + "</a> </li>";
+        } 
+        $("#lastfm").html( results + "</ul>");
+      }else{
+        $("#lastfm").html("<p>No Gigs planned at the minute.</p>");          
+      }
+    }
+  });
+
+  var feed = new google.feeds.Feed("http://twitter.com/statuses/user_timeline/34881351.rss");
+
+  feed.load(function(result) {
+    if (!result.error) {
+      if(result.feed.entries.length){
+        var results = "<ul>";
+        for (var i = 0; i < result.feed.entries.length; i++) {
+          var entry = result.feed.entries[i];
+          results += "<li>" + entry.title + "</li>";
+        } 
+        $("#tweets").html( results + "</ul>");
+      }else{
+        $("#tweets").html("<p>No Tweets</p>");          
+      }
+    }
+  });
+}
+google.setOnLoadCallback(initialize);
+
+</script>
+
+
+
+<?php include "style/footer.php"; ?>

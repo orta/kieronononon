@@ -1,0 +1,179 @@
+#comment-box {
+position: relative;
+height: 2px;width :1000px;
+}
+div.comment {
+height: 30px;width :300px;
+z-index: 9;
+position: absolute;
+top: -30px;
+}
+div.alt img {
+float: right;
+-webkit-transform: scaleX(-1);
+-moz-transform: scaleX(-1);
+}
+.fbinfo {
+float: right;width :80px;
+}
+.fbinfo .FB_profile_pic {
+margin-top: 0px;
+}
+.fbinfo .FB_name {
+float: right;
+clear: right;
+}
+div.comment div.facebook p {
+width: 100px;
+float: left;
+}
+div.comment div.comment-bubble {
+position: absolute;
+bottom: 28px;
+left: 20px;
+padding: 20px;
+border: 3px solid #bbb;
+border-radius: 10px;
+-moz-border-radius: 10px;
+background-color: white;
+border-bottom-left-radius: 0px;
+-moz-border-radius-bottomleft: 0px;
+background: -webkit-gradient(
+linear,
+left bottom,
+left top,
+color-stop(0.7,rgb(255,255,255)),
+color-stop(0.4,rgb(210,210,210))
+);
+background: -moz-linear-gradient(
+center bottom,
+rgb(255,255,255) 2%,
+rgb(240,240,240) 40%
+);
+}
+img.gravatar {
+width: 24px;
+height: 24px;
+vertical-align: middle;
+float: none;
+}
+div.alt div.comment-bubble {
+right: 22px;
+border-bottom-left-radius: 10px;
+border-bottom-right-radius: 0px;
+-moz-border-radius: 10px;
+-moz-border-radius-bottomright: 0px;
+}
+#page-content {
+margin-top: 32px;
+}
+.content-cd {
+height: 310px;
+}
+#case {
+position: absolute;
+z-index: 50;
+}
+.content-cd,.read,.hole {
+cursor: pointer;
+}
+#CD {
+z-index: -1;
+position: absolute;
+left: 80px;
+top: 8px;
+-webkit-transform: rotate(0deg);
+-webkit-transition: all 1s ease-in-out;
+-moz-transition-duration: 1s;
+-moz-transform: rotate(0deg);
+
+}
+.content-cd:hover #CD {
+left: 193px;
+-webkit-transform: rotate(360deg);
+-moz-transform: rotate(360deg);
+}
+.content-cd:hover h3 {
+display: block;
+}
+.content-cd h3 {
+display: none;
+position: absolute;
+z-index: 51;
+background-color: rgba(0,0,0,0.5);
+padding: 10px 0px;
+width: 100%;
+text-align: center;
+top: 116px;
+}
+.player {
+background: url(../images/playersprite.png) no-repeat;
+height: 60px;
+}
+.player:hover {
+background-position: 0px -67px;
+}
+.sm2_playing {
+background: url(../images/playersprite.png) no-repeat;
+background-position: 0px -135px;
+}
+.player a {
+display: block;
+height: 60px;
+color: white;
+padding-left: 20px;
+}
+#page-content {
+color: white;
+}
+.read {
+text-align: center;
+padding-top: 30px;
+background: url(../images/read-bg.jpg) no-repeat;
+background-position: center 30px;
+}
+#current_issue {
+width: 140px;
+-moz-box-shadow: 1px 1px 10px #000;
+-webkit-box-shadow: 1px 1px 10px #000;
+}
+.watch {
+padding-top: 40px;
+}
+.hole {
+padding-top: 41px;
+}
+#khole {
+position: absolute;
+z-index: 10;
+margin-top: 15px;
+padding: 22px;
+-webkit-transition: all 1s ease-in-out;
+background-color: white;
+}
+.hole:hover #khole {
+background-color: transparent;
+}
+#khole_banner {
+height: 184px;
+}
+.grid_4 h3 {
+text-align: center;
+}
+#roxxor {
+margin-top: 6px;
+}
+#tweets ul li {
+margin-bottom: 8px;
+}
+.info li {
+margin-left: 10px;
+}
+#twitter {
+background: url(../images/twitter.jpg) no-repeat;
+background-position: 140px 10px;
+}
+#gigs {
+background: url(../images/events.jpg) no-repeat;
+background-position: 140px 10px;
+}
