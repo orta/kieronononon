@@ -1,0 +1,145 @@
+<style>
+body{
+  color: white;
+}
+
+h2{
+  background: url(/assets/images/header-bg.png) repeat-x;
+  color:  black;
+  padding-bottom: 0;
+  padding-top: 40px;
+  height: 64px;
+  line-height: 74px;
+  font-size: 64px;
+}
+
+.remixinfo{
+  width:  85px;
+  display: inline-block;
+}
+#mix h3{
+    margin-top: 20px;
+}
+.gsc-control{
+  width: 460px !important;
+}
+.gs-result img.gs-image{
+  border: 1px solid #8F4D00 !important;
+}
+.gsc-control a{
+  color: #8F4D00 !important;
+}
+
+li{
+  list-style: none;
+}
+</style>
+
+<div class="article">
+ <div class="section container_12">
+   <h1>Wanna see things about us, then you're at the right page!</h1>
+
+   <div class="grid_4" id="mix">    
+      <h2>Mix Pack</h2>
+    <center>
+      <a href= "http://www.brutaltechnopunk.com/remixpacks/Kieronononon-noonelaughed-remixpack.zip"><img src="assets/images/remix-no-one.jpg" alt="" /></a>
+      <a href=  "http://www.brutaltechnopunk.com/remixpacks/Kieronononon-yourenotjamesbond-remixpack.zip"><img src="assets/images/stjeromes-remix.jpg" alt="" /></a>
+      <a href= "http://www.brutaltechnopunk.com/remixpacks/Kieronononon-marchofthebugs-remixpack.zip"><img src="assets/images/buggers-remix.jpg" alt="" /></a>
+      <br />
+    <div class="remixinfo">
+      <a href= "http://www.brutaltechnopunk.com/remixpacks/Kieronononon-marchofthebugs-remixpack.zip">
+        No-One Laughed Remix Pack
+      </a>
+    </div>
+
+    <div class="remixinfo">
+      <a href= "http://www.brutaltechnopunk.com/remixpacks/Kieronononon-yourenotjamesbond-remixpack.zip">
+      You're Not James Bond Either Remix Pack    
+      </a>  
+    </div>
+
+    <div class="remixinfo">
+      <a href= "http://www.brutaltechnopunk.com/remixpacks/Kieronononon-marchofthebugs-remixpack.zip">
+            March of The Bugs Remix Pack
+      </a>
+    </div>
+
+    <h3>Get your groove on and make a remix</h3>
+    </center>
+    <p>We love remixes, we especially love remixes of our music. We've got a good amount of it so far and are planning on doing something pretty epic with it soon enough.<p>
+   </div>
+
+   <div class="grid_4" id="press">
+    
+      <h2>Press Pack</h2>
+    
+      <p> 
+  	<a href="assets/images/presspack2010.zip"><img alt="presspack image" src="assets/images/press.jpeg" /></a></p> <p> 	Here&#39;s our press pack, it contains anything we reckon a press person would need. Logos, Photos and a sample MP3.</p>     
+   </div>
+
+   <div class="grid_4" id="photo">
+    
+      <h2>Photo Pack</h2>
+      <p>
+        We should put something here pretty soon, or not, there's loads of photos on google images at the minute.
+      </p>
+    
+   </div>
+   <div class="clear"></div>
+   <div class="grid_6" id="news">
+    
+      <h2>Kieronon News</h2>
+      
+      <div id="newscontent">&nbsp;</div>
+   </div>
+
+   <div class="grid_6" id="youtube">
+    
+      <h2>Latest Videos</h2>
+      
+      <div id="youtubecontent">&nbsp;</div>
+   </div>
+
+   
+</div>
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAfhcL9onk1IwFcC4_Gg8y8BShhZBixF0XVSHkifztW3HT4Lh_chTxSkyhhyLDbWZIKal8vo-EDqgudw"></script>
+
+<script>
+  google.load("feeds", "1");
+  google.load('search', '1');
+  
+  function initialize() {
+    // var feed = new google.feeds.Feed("http://ws.audioscrobbler.com/1.0/artist/Kieronononon/events.rss");
+     var feed = new google.feeds.Feed("http://feeds.delicious.com/v2/rss/tag/kieronononon?count=15");
+    feed.load(function(result) {
+      if (!result.error) {
+        if(result.feed.entries.length){
+          var results = "<ul>";
+          for (var i = 0; i < result.feed.entries.length; i++) {
+            var entry = result.feed.entries[i];
+            results += "<li><a href='" + entry.link + "'>" + entry.title + "</a> <p>" + entry.contentSnippet  +  "</p></li>";
+          } 
+          $("#newscontent").html( results + "</ul>");
+        }else{
+          $("#newscontent").html("<p>No News Found</p>");          
+        }
+      }
+    });
+    
+    
+    // create a search control
+    var searchControl = new google.search.SearchControl();
+    options = new google.search.SearcherOptions();
+    options.setExpandMode(google.search.SearchControl.EXPAND_MODE_OPEN);
+    searchControl.addSearcher(new google.search.VideoSearch(), options);
+
+    // Draw the control onto the page
+    searchControl.draw(document.getElementById("youtubecontent"));
+
+    // Search for a YouTube channel
+    searchControl.execute("kieronononon OR kierononon");
+  }
+  google.setOnLoadCallback(initialize);
+  
+  
+</script>

@@ -6,6 +6,10 @@ get '/' do
   erb :index  
 end
 
+get '/ajax/music' do
+  erb :ajax_cds, layout => :blank
+end
+
 get '/music' do
   erb :music  
 end
@@ -14,6 +18,6 @@ get '/band' do
   erb :band  
 end
 
-get '/ajax/music' do
-  erb :ajax_cds, layout => :blank
+get '/media' do
+  erb :media
 end
