@@ -32,8 +32,7 @@ hr{
       <p>bleh belh</p> 
     </div>
     <div class="clear"></div>
-    <hr />
-    
+    <!-- end of new EP -->
     
     <hr />
     <div class="grid_6">
@@ -59,6 +58,7 @@ hr{
     </div>
     <div class="clear"></div>
     <hr />
+    
 
     <div class="grid_4">
       <a href="../php/download_magic?file=__threemanparty.zip">
@@ -148,8 +148,39 @@ hr{
       </div>
     </div>
   </div>
-      <script type="text/javascript" src="assets/javascripts/soundmanager2-nodebug-jsmin.js"></script>
+  
+  <div id="control-template">
+   <!-- control markup inserted dynamically after each link -->
+   <div class="controls">
+    <div class="statusbar">
+     <div class="loading"></div>
+      <div class="position"></div>
+    </div>
+   </div>
+   <div class="timing">
+    <div id="sm2_timing" class="timing-data">
+     <span class="sm2_position">%s1</span> / <span class="sm2_total">%s2</span></div>
+   </div>
+   <div class="peak">
+    <div class="peak-box"><span class="l"></span><span class="r"></span>
+    </div>
+   </div>
+  </div>
+  <div id="spectrum-container" class="spectrum-container">
+   <div class="spectrum-box">
+    <div class="spectrum"></div>
+   </div>
+  </div> 
+  
+  
+  <div id="sm2-container">
+   <!-- SM2 flash movie goes here -->
+  </div>
+
+<script src="/assets/javascripts/soundmanager2.js"></script>
+<script src="/assets/javascripts/page-player.js"></script>
 
       <script type="text/javascript" charset="utf-8">
       soundManager.url = 'assets/javascripts/';
+      soundManager.useHTML5Audio = false; // w00t.
       </script>

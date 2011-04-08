@@ -254,6 +254,7 @@ a.stbutton {
 input,.edithover {
   color: black;
 }
-.FB_name{
-  text-align: right;
+
+#control-template {
+ display:none;
 }
