@@ -34,7 +34,12 @@ get '/media' do
   erb :media
 end
 
-get /kommunique|komm|read/ do
+
+get /komm$|read/ do
+  redirect "kommunique"
+end
+
+get '/kommunique' do
   @komms = [
     { :pdf => true, :description => "Issue 1 The issue that started it all, beautiful and simple, find out about; Kierononon's favourite obscure Pokemon, how we spend our money and what they were doing on reality-TV hit Shipwrecked: Battle of the Islands 2008.<br/>Rockin!"},
     { :pdf => true, :description => "Issue 2 Coming out an exact two weeks later Issue 2 talks about Keirononon's favourite ice-cream based desert, you can also discover; what goatboy did/didnt do to his laptop, how to know if you're a hardcore fan and what kind of underwear do Kierononon jam in."},

@@ -88,6 +88,7 @@ ul.main li a:visited {
   color: #2C2C2C;
 }
 ul.main li a {
+  padding-top: 4px;
   display: block;
   text-align: center;
   color: #2C2C2C;
