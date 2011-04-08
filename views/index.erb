@@ -5,10 +5,12 @@
 <center>
   <div class="section" id="headline">
     <div id="banner">
-      <img src="assets/images/banner/banner6.jpg" width="1040" height="500" alt="Banner1">
-      <img src="assets/images/banner/banner2.jpg" width="1040" height="500" alt="Banner1" style='display:none'>
-      <img src="assets/images/banner/banner1.jpg" width="1040" height="500" alt="Banner1" style='display:none'>
-      <img src="assets/images/banner/banner2.jpg" width="1040" height="500" alt="Banner1" style='display:none'>
+      <% i =0 %>
+      <% @slideshow.shuffle.each do |banner| %>
+        <img src="<%= banner %>" width="1040" height="500" alt="Banner1" <%= i > 0 ? "":"style='display:none'"%> >
+        <% i = i + 1 %>
+        <% if (i == 5) then break end %>
+      <% end %>
     </div> 
   </div>
 </div>
