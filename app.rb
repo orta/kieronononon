@@ -19,7 +19,7 @@ get '/' do
 end
 
 get '/ajax/music' do
-  erb :ajax_cds, layout => :none
+  erb :ajax_cds, { :layout => false }
 end
 
 get '/music' do
@@ -48,6 +48,10 @@ get /kommunique|komm|read/ do
     { :pdf => true, :description => "Issue 10 Kierononon apologise for once, talk about the new stuff and kompare facial hair. "}
   ]
   erb :read
+end
+
+get '/khole' do
+  erb :khole
 end
 
 get '/gift' do
