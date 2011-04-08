@@ -72,43 +72,37 @@
 <div class="article">
   <div class="section container_12">
     <h1>Kierononononn Kommunique</h1>
-    <div class="e-ease ee:wwig" id="komm_heading" ><?php include("inc/komm_heading.txt");?></div>
+    <div id="komm_heading" >Kieronononon's secret-ish Kommuniques to anyone who dares read</div>
   </div>
   <div class="empty">
-    <?php
-  $dir_handle = scandir("./komm/thumbs", 1) or die("Unable to open /komm/");
+    <% i = 0; black = true %>
+    <% @komms.each do |komm| %>
+    <% i = i + 1 %>
+    <% issue_num = i > 9 ? i : "0#{i}" %>
 
-  // Loop through folders of the project dir
-  foreach( $dir_handle as $issueName){
-    if($issueName == ".DS_Store" || $issueName == "." || $issueName == ".." || $issueName == "index.php" ) continue;
+    <% if( i % 2 == 1) %>
+      <% if black %>
+        <div class="clear"></div></div><div class = "issue container_12">
+        <% black = false %>
+      <% else %>
+        <div class="clear"></div></div><div class = "issue container_12 alt">
+        <% black = true %>
+      <% end %>
+    % end %>
 
-    $i++;
-    if($i % 2) {
-      if($switch){
-
-        echo '<div class="clear"></div></div><div class = "issue container_12  ">';
-      }else{
-        echo '<div class="clear"></div></div><div class = "issue container_12 alt">';    
-      } 
-      $switch = !$switch;     
-    }
-    $name = str_replace(".jpeg", "", $issueName);
-    $pdfurl = str_replace("jpeg", "pdf", $issueName);
-    $htmlurl = str_replace("jpeg", "html", $issueName);
-    // echo "komm/" . $pdfurl;
-    echo "<div class = 'komm image grid_6'>
-      <img src = \"komm/thumbs/$issueName\">
-      <h2><span>$name</span>";
-    if(file_exists("komm/" . $pdfurl)) echo "<span><a href=\"komm/$pdfurl\">pdf</a></span>";
-    if(file_exists("komm/" . $htmlurl))echo "<span><a href=\"komm/$htmlurl\">html</a></span>";
-    echo "</h2> <p>";
-    $url = str_replace("jpeg", "txt", $issueName);
-    print implode("",file("komm/overview/" .$url));    
-    echo "</p> 
-      </div>";    
-  }
-  ?><div class="clear"></div>
-</div>
+    <div class= 'komm image grid_6'>
+      <img src = "assets/komm/thumbs/issue_<%= issue_num %>.jpeg">
+      <h2><span>Komm <%= i %></span>
+        <% if komm[:pdf] == true %>
+        <span><a href="assets/komm/issue_<%= issue_num %>.pdf">pdf</a></span>
+        <% end %>
+        <span><a href="assets/komm/issue_<%= issue_num %>.html">html</a></span>
+      </h2>
+      <p><%= komm[:description] %></p>
+    </div>
+    <% end %>
+    <div class="clear"></div>
+  </div>
 </div>
 </div>
 </div>
