@@ -6,6 +6,31 @@ body{
 hr{
   margin: 20px 0px;
 }
+
+.playlist li{
+    list-style:none;
+    margin: 0 2px 2px 0;
+    background-color: #363636;
+}
+.playlist li.sm2_playing{
+  background-image: url(/assets/images/header-bg.png);
+  color: black;
+}
+.playlist li.sm2_playing a{
+  color: black;
+  
+}
+.playlist li:hover{
+  background-color: #606060;
+}
+
+.playlist li a {
+  display: block;
+  padding: 4px;
+}
+.playlist li > div{
+  padding: 4px;
+}
 </style>
 
 <div class="article">
@@ -40,7 +65,7 @@ hr{
     </div>
     <div class="section sidebar grid_3">
       <h3> &ldquo;There's this Dragon&rdquo;</h3>
-      <ul class=" playlist">
+      <ul class="playlist">
         <li><a href= "mp3s/01 Now You're Gone.mp3">Now You're Gone</a></li>
         <li><a href= "mp3s/02 March Of The Bugs.mp3">March Of The Bugs</a></li>
         <li><a href= "mp3s/03 Cookbook.mp3">Cookbook</a></li>
