@@ -43,7 +43,7 @@
           <a href="mp3s/02 March Of The Bugs.mp3" class="sm2_button" title="play March of the Bugs" >March of the Bugs</a>
         </div>
         <div class="grid_2 player">
-          <a href="mp3s/05 No Chicks, No Beer.mp3" class="sm2_button" >No Chicks, No Beers</a>
+          <a href="mp3s/05 No Chicks, No Beer.mp3" class="sm2_button" >No Chicks, No Beer</a>
         </div>
         <div class=" omega grid_2 player">
           <a href="mp3s/06 Megaman 9.mp3" class="sm2_button" href="#">Megaman 9</a>
@@ -104,6 +104,31 @@
     <div class="clear"></div>
   </div>
 </div>
+
+<!-- this has to be in -->
+<div id="control-template">
+ <!-- control markup inserted dynamically after each link -->
+ <div class="controls">
+  <div class="statusbar">
+   <div class="loading"></div>
+    <div class="position"></div>
+  </div>
+ </div>
+ <div class="timing">
+  <div id="sm2_timing" class="timing-data">
+   <span class="sm2_position">%s1</span> / <span class="sm2_total">%s2</span></div>
+ </div>
+ <div class="peak">
+  <div class="peak-box"><span class="l"></span><span class="r"></span>
+  </div>
+ </div>
+</div>
+<div id="spectrum-container" class="spectrum-container">
+ <div class="spectrum-box">
+  <div class="spectrum"></div>
+ </div>
+</div> 
+
  
 <script>
 $(document).ready(function() {
@@ -155,11 +180,14 @@ $(document).ready(function() {
 
 <script src="assets/javascripts/jquery.cycle.lite.min.js"></script>
 <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAfhcL9onk1IwFcC4_Gg8y8BShhZBixF0XVSHkifztW3HT4Lh_chTxSkyhhyLDbWZIKal8vo-EDqgudw"></script>
-
 <script src="assets/javascripts/shadowbox/shadowbox.js" type="text/javascript" charset="utf-8"></script>
-<script>
-google.load("feeds", "1");
+
+<script src="/assets/javascripts/soundmanager2.js"></script>
+<script src="/assets/javascripts/page-player.js"></script>
+
+<script type="text/javascript" charset="utf-8">
 soundManager.url = 'assets/javascripts/';
+google.load("feeds", "1");
 
 function initialize() {
 
@@ -201,5 +229,3 @@ google.setOnLoadCallback(initialize);
 
 </script>
 
-<script type="text/javascript" src="assets/javascripts/soundmanager2-nodebug-jsmin.js"></script>
-<script type="text/javascript" src="assets/javascripts/inlineplayer.js"></script>

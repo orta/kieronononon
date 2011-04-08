@@ -1,38 +1,4 @@
-<style>
-body{
-  color: white;
-}
-
-hr{
-  margin: 20px 0px;
-}
-
-.playlist li{
-    list-style:none;
-    margin: 0 2px 2px 0;
-    background-color: #363636;
-}
-.playlist li.sm2_playing{
-  background-image: url(/assets/images/header-bg.png);
-  color: black;
-}
-.playlist li.sm2_playing a{
-  color: black;
-  
-}
-.playlist li:hover{
-  background-color: #606060;
-}
-
-.playlist li a {
-  display: block;
-  padding: 4px;
-}
-.playlist li > div{
-  padding: 4px;
-}
-</style>
-
+<link rel="stylesheet" href="/assets/stylesheets/music.css">
 <div class="article">
   <div class="section container_12">
     <h1>Music of Kieronononon</h1>
@@ -42,12 +8,12 @@ hr{
       <img src = "assets/images/theresthisdragon420.jpg"  alt = "There's this Dragon album art" />
     </div>
     <div class="section sidebar grid_3">
-      <h3> &ldquo;The New EP&rdquo;</h3>
+      <h3>&ldquo;Complaints Dept&rdquo;</h3>
       <ul class=" playlist">
         <li><a href= "mp3s/01 Now You're Gone.mp3">Fox To The Hounds</a></li>
         <li><a href= "mp3s/02 March Of The Bugs.mp3">Do The Robot</a></li>
         <li><a href= "mp3s/03 Cookbook.mp3">Krieger</a></li>
-        <li><a href= "mp3s/04 Foul Play at Sammy Steves.mp3">The Increasing Paranoia of Elfin Keys</a></li>
+        <li><a href= "mp3s/04 Foul Play at Sammy Steves.mp3">The Increasing Paranoia of <br/>Elfin Keys</a></li>
         <li><a href= "mp3s/05 No Chicks, No Beer.mp3">Letters To Celine</a></li>
         <li><a href= "mp3s/06 Megaman 9.mp3">Powercut</a></li>
       </ol>
@@ -197,15 +163,9 @@ hr{
    </div>
   </div> 
   
-  
-  <div id="sm2-container">
-   <!-- SM2 flash movie goes here -->
-  </div>
-
 <script src="/assets/javascripts/soundmanager2.js"></script>
 <script src="/assets/javascripts/page-player.js"></script>
 
       <script type="text/javascript" charset="utf-8">
       soundManager.url = 'assets/javascripts/';
-      soundManager.useHTML5Audio = false; // w00t.
       </script>
