@@ -1,13 +1,5 @@
-<!-- http://www.youtube.com/watch?v=ZiBqaZb09to - bugs
-http://www.youtube.com/watch?v=M4CsQZMooIc - megaman 9
-http://www.youtube.com/watch?v=Xv8nON4DBmY - st jeromes
-http://www.youtube.com/watch?v=dUxNTh_5epY - Roullette in Paris
-http://www.youtube.com/watch?v=64tePVem9ms - Holding Out for a Hero -->
-
-<!--  960 / 5 = 192 -->
-<!-- images 180 with 6 margin -->
-
 <style type="text/css" media="screen">
+
 #video{
   -moz-box-shadow: inset 0 5px 1em #793F08;
   -webkit-box-shadow: inset 0 5px 1em #793F08;
@@ -50,7 +42,7 @@ p{
 
     <center>
       <div id ="headline">
-        <img src="/assets/images/video/headline.jpg" alt="Headline">
+        <img src="/assets/images/video/headline.jpg" width=853 height=503 alt="Headline">
       </div>
 
       <hr/>
@@ -58,7 +50,7 @@ p{
       <div class="video">
         <a href="http://www.youtube.com/watch?v=64tePVem9ms">
           <img src="/assets/images/video/headline.jpg" alt="" width=180>
-          <h3> Holding Out For A Hero</h3>
+          <h3>Holding Out For A Hero</h3>
           <p>
             Holding Out For A Hero
           </p>
@@ -107,7 +99,10 @@ p{
 </div>
 
 <script>
-  
-  
-
+  $(document).ready(function() {
+    $("div.video a").click( function(){
+      
+      return false
+    })
+  });
 </script>
