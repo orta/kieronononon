@@ -12,7 +12,7 @@ hr{
     background-color: #363636;
 }
 .playlist li.sm2_playing{
-  background-image: url(/assets/images/header-bg.png);
+  background-image: url(https://btp4.s3.amazonaws.com/images/header-bg.png);
   color: black;
 }
 .playlist li.sm2_playing a{
