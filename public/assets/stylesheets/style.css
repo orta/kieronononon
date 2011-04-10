@@ -27,7 +27,7 @@ body {
   background-color: black;
   min-size: 960px;
   margin-bottom: 20px;
-  background: url(../images/body-bg.png) repeat-x;
+  background: url(https://btp4.s3.amazonaws.com/images/body-bg.png) repeat-x;
   background-color:black;
   
 }
