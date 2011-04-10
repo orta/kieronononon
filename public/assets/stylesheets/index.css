@@ -47,7 +47,7 @@ text-align: center;
 top: 116px;
 }
 .player {
-background: url(../images/playersprite.png) no-repeat;
+background: url(https://btp4.s3.amazonaws.com/images/playersprite.png) no-repeat;
 height: 60px;
 }
 .player:hover {

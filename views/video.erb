@@ -43,7 +43,7 @@ p{
   <div class="section container_12 ">
     <h1>Kieronononononon have awesome videos!!</h1>
     <hr/>
-
+    <h2 id="song_title">Kierononon - Holding Out for a Hero</h2>
     <center>
 
       <iframe id="youtube" title="YouTube video player" width="853" height="503" src="http://www.youtube.com/embed/64tePVem9ms" frameborder="0" allowfullscreen></iframe>
@@ -53,19 +53,29 @@ p{
       <div class="video">
         <a href="http://www.youtube.com/watch?v=64tePVem9ms" data-embed="http://www.youtube.com/embed/64tePVem9ms">
           <img src="https://btp4.s3.amazonaws.com/images/video/hero_thumb.jpg" alt="" width=180 height=120>
-          <h3>Holding Out For A Hero</h3>
+          <h3>Holding Out For a Hero</h3>
           <p>
-            Holding Out For A Hero
+            Kierononon cover Celine Dion's world famous song Holding Out for A Hero and we also remix her cheesey-ass video!
           </p>
         </a>
       </div>
 
       <div class="video">
-        <a href = "http://www.youtube.com/watch?v=dUxNTh_5epY" data-embed="http://www.youtube.com/embed/dUxNTh_5epY">
-        <img src="https://btp4.s3.amazonaws.com/images/video/roulette_thumb.jpg" alt="" width=180 height=120>
-          <h3>Roulette in Paris</h3>
+        <a href = "http://www.youtube.com/watch?v=M4CsQZMooIc" data-embed="http://www.youtube.com/embed/M4CsQZMooIc">
+          <img src="https://btp4.s3.amazonaws.com/images/video/megaman_thumb.jpg" alt="" width=180 height=120>
+          <h3>Megaman 9</h3>
           <p>
-            Here's some text about the phat ass video yo
+            No one likes a hard game, but it turns out everyone likes songs about them.
+          </p>
+        </a>
+      </div>
+      
+      <div class="video">
+        <a href="http://www.youtube.com/watch?v=ZiBqaZb09to" data-embed="http://www.youtube.com/embed/ZiBqaZb09to">
+          <img src="https://btp4.s3.amazonaws.com/images/video/bugs_thumb.jpg" alt="" width=180 height=120>
+          <h3>March of The Bugs</h3>
+          <p>
+            Kierononon take on the armies of bugs backed by an army of legomen!
           </p>
         </a>
       </div>
@@ -75,25 +85,17 @@ p{
           <img src="https://btp4.s3.amazonaws.com/images/video/jeromes_thumb.jpg" alt="" width=180 height=120>
           <h3>St Jeromes</h3>
           <p>
-            Here's some text about the phat ass video yo
+            What happens when good superheros get old?
           </p>
         </a>
       </div>
+      
       <div class="video">
-        <a href = "http://www.youtube.com/watch?v=M4CsQZMooIc" data-embed="http://www.youtube.com/embed/M4CsQZMooIc">
-          <img src="https://btp4.s3.amazonaws.com/images/video/megaman_thumb.jpg" alt="" width=180 height=120>
-          <h3>Megaman 9</h3>
+        <a href = "http://www.youtube.com/watch?v=dUxNTh_5epY" data-embed="http://www.youtube.com/embed/dUxNTh_5epY">
+        <img src="https://btp4.s3.amazonaws.com/images/video/roulette_thumb.jpg" alt="" width=180 height=120>
+          <h3>Roulette in Paris</h3>
           <p>
-            Here's some text about the phat ass video yo
-          </p>
-        </a>
-      </div>
-      <div class="video">
-        <a href="http://www.youtube.com/watch?v=ZiBqaZb09to" data-embed="http://www.youtube.com/embed/ZiBqaZb09to">
-          <img src="https://btp4.s3.amazonaws.com/images/video/bugs_thumb.jpg" alt="" width=180 height=120>
-          <h3>March of The Bugs</h3>
-          <p>
-            Here's some text about the phat ass video yo
+            Ever Wondered what would happen is Paris Hilton got done by the police for drink driving? Also, nipple slip.
           </p>
         </a>
       </div>
@@ -105,6 +107,7 @@ p{
   $(document).ready(function() {
     $("div.video a").click( function(){
       $("#youtube").attr("src", $(this).data("embed") )
+      $("#song_title").text( "Kierononon - " +  $("h3", this).text() )
       return false
     })
   });
