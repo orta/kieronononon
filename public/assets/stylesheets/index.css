@@ -1,3 +1,9 @@
+#headline #banner {
+  margin: auto 0px;
+  width :1040px;
+  height: 500px;
+}
+
 #page-content {
 margin-top: 32px;
 }
