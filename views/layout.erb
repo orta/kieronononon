@@ -72,8 +72,82 @@
         </ul> 
       </div> 
     </div> 
+    
     <%= yield %>
+    
+    <div class="container_12"> 
+    <hr/>
+      <div class="section" style="color:white;">
+
+      <div class=" article grid_4 info" id="gigs">
+        <h2>Upcoming Gigs</h2>
+        <div id="lastfm">
+          &nbsp;
+        </div>
+      </div>
+      <div class=" article grid_4 info" id="twitter">
+        <h2><a href="http://twitter.com/Kieronononon">@Kieronononon</a></h2>
+        <div id="tweets">
+
+        </div>
+
+      </div>
+      <div class=" article grid_4 info">
+        <h2>Contact</h2>
+        <ul>
+          <li>Enquiries - <a href="mailto:band@technopunk.me?subject=Query">band@technopunk.me</a></li>
+          <li>Site / Design - <a href="mailto:orta@technopunk.me">orta@technopunk.me</a></li> 
+          <li><a href="http://roxxor2.co.uk"><img src="https://btp4.s3.amazonaws.com/images/luv_roxxor.png" alt="roxXOR2 logo" id="roxxor"/>
+          </a></li>
+        </ul>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+    <script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAfhcL9onk1IwFcC4_Gg8y8BShhZBixF0XVSHkifztW3HT4Lh_chTxSkyhhyLDbWZIKal8vo-EDqgudw" ></script>
+
     <script>
+    google.load("feeds", "1");
+
+    function initialize() {
+
+      var feed = new google.feeds.Feed("http://ws.audioscrobbler.com/1.0/artist/Kieronononon/events.rss");
+      feed.load(function(result) {
+        if (!result.error) {
+          if(result.feed.entries.length){
+            var results = "<ul>";
+            for (var i = 0; i < result.feed.entries.length; i++) {
+              var entry = result.feed.entries[i];
+
+              results += "<li><i>" + entry.content.split("\n")[0] + "</i><br/><a href='" + entry.link + "'>" + entry.title + "</a> </li>";
+            } 
+            $("#lastfm").html( results + "</ul>");
+          }else{
+            $("#lastfm").html("<p>No Gigs planned at the minute.</p>");          
+          }
+        }
+      });
+
+      var feed = new google.feeds.Feed("http://twitter.com/statuses/user_timeline/34881351.rss");
+
+      feed.load(function(result) {
+        if (!result.error) {
+          if(result.feed.entries.length){
+            var results = "<ul>";
+            for (var i = 0; i < result.feed.entries.length; i++) {
+              var entry = result.feed.entries[i];
+              results += "<li>" + entry.title + "</li>";
+            } 
+            $("#tweets").html( results + "</ul>");
+          }else{
+            $("#tweets").html("<p>No Tweets</p>");          
+          }
+        }
+      });
+    }
+    google.setOnLoadCallback(initialize);
+
+
       $(document).ready(function() {
         $(".logo").addClass("done");
       });
