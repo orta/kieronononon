@@ -55,17 +55,14 @@ h1,h2,h3,h4,#sb-title-inner {
 .header ul.nav{
 	clear: both;
 	text-align: center;
+	margin-bottom: 4px;
 }
 
-.header ul.nav li{
+ul.nav li{
 	display: inline-block;
+	margin: 0;
 }
 
-.header ul#subnav li a{
-	padding-top: 16px;
-	color:#747474;
-	}
-	
 #headline #banner {
   margin: auto 0px;
   margin-top: 48px;
@@ -83,14 +80,16 @@ ul.main {
   margin-bottom: 6px;
   margin-top: 0;
 }
+
 ul.main li{
   margin:0;
   padding: 0 12px 0 12px;
-  
 }
+
 ul.main li a:visited {
   color: #2C2C2C;
 }
+
 ul.main li a {
   padding-top: 4px;
   display: block;
@@ -102,10 +101,12 @@ ul.main li a {
   -webkit-user-select: none;
 }
 
-ul.sub {
-  margin-bottom: 12px;
-  margin-top: 12px;
+ul.sub li {
+  margin: 12px 6px;
 }
+	
+
+
 #control-template {
  display:none;
 }
