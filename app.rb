@@ -4,16 +4,16 @@ require "sinatra/reloader"
 
 get '/' do
   @slideshow =[
-    "assets/images/banner/dragons_banner.jpg",
-    "assets/images/banner/banner1.jpg",
-    "assets/images/banner/banner2.jpg",
-    "assets/images/banner/banner3.jpg",
-    "assets/images/banner/banner4.jpg",
-    "assets/images/banner/banner5.jpg",
-    "assets/images/banner/banner6.jpg",
-    "assets/images/banner/banner7.jpg",
-    "assets/images/banner/banner8.jpg",
-    "assets/images/banner/banner9.jpg"] 
+    "https://btp4.s3.amazonaws.com/images/banner/dragons_banner.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner1.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner2.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner3.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner4.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner5.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner6.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner7.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner8.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/banner9.jpg"] 
   @latest_komm = 10
   erb :index,  { :locals => {:title => "index"}}
 end

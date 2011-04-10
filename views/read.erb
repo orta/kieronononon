@@ -92,14 +92,13 @@
         <% black = true %>
       <% end %>
     <% end %>
-
         <div class= 'komm image grid_6'>
-          <img src = "assets/komm/thumbs/issue_<%= issue_num %>.jpeg">
+          <img src = "https://btp4.s3.amazonaws.com/komm/thumbs/issue_<%= issue_num %>.jpeg">
           <h2><span>Komm <%= i %></span>
             <% if komm[:pdf] == true %>
-            <span><a href="assets/komm/issue_<%= issue_num %>.pdf">pdf</a></span>
+            <span><a href="https://btp4.s3.amazonaws.com/komm/issue_<%= issue_num %>.pdf">pdf</a></span>
             <% end %>
-            <span><a href="assets/komm/issue_<%= issue_num %>.html">html</a></span>
+            <span><a href="https://btp4.s3.amazonaws.com/komm/issue_<%= issue_num %>.html">html</a></span>
           </h2>
           <p><%= komm[:description] %></p>
         </div>

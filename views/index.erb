@@ -10,9 +10,9 @@
 <center>
   <div class="section" id="headline">
     <div id="banner">
-      <% i =0 %>
+      <% i = 0 %>
       <% @slideshow.shuffle.each do |banner| %>
-        <img src="<%= banner %>" width="1040" height="500" alt="Banner1" <%= i > 0 ? "":"style='display:none'"%> >
+        <img src="<%= banner %>" width="1040" height="500" alt="Banner1" <%= i > 0 ? "style='display:none'" : ""%> >
         <% i = i + 1 %>
         <% if (i == 5) then break end %>
       <% end %>
@@ -24,23 +24,25 @@
   <div class="section container_12" id="page-content">
 
     <div class=" grid_6 content-cd">
-      <img src="assets/images/dragon-cd.jpeg" id="case" alt="Jewel Ituneslp">
-      <img src="assets/images/cd.jpg" id="CD"  alt="Cd">
+      <img src="https://btp4.s3.amazonaws.com/images/dragon-cd.jpeg" id="case" alt="Jewel Ituneslp">
+      <img src="https://btp4.s3.amazonaws.com/images/cd.jpg" id="CD"  alt="Cd">
       <h3>Click to download our free iTunes EP or Music</h3>
     </div>
 
     <div class="article grid_6">
       <h1>It's those Kieronononon guys</h1>
-<p> 	<span style="color:#fff;"><span class="Apple-style-span" style="font-family: arial, helvetica, sans-serif; font-size: small; white-space: pre-wrap; "><span x="y">Kierononon are a 3-piece </span><span x="y">brutaltechnopunk</span><span x="y"> outfit, with goatboy on guitars, </span><span x="y">floatstarpx</span><span x="y"> on bass/drum programming, and </span><span x="y">orta</span><span x="y"> keyboard/decks/toys. We operate a three-pronged vocal assault, and we do not have a drummer. We formed in 2006 when we were drunk at a party. It was cool anyway, we drew loads of pictures of logos for the band.</span></span></span></p> <p> 	<span style="color:#fff;"><span class="Apple-style-span" style="font-family: arial, sans-serif; font-size: small; white-space: pre-wrap; "><span style="font-family:arial, helvetica, sans-serif;"><span x="y">In the time between then and now, we have recorded 4 EPs and now a full length album, and we&#39;ve done a whole bunch of gigs. We still come up with our best ideas when we&#39;re drunk at parties. Our new album is awesome. It&#39;s called &quot;There&#39;s this Dragon&quot;, and you can hear it on our website here.</span></span></span></span></p> <p> 	<span style="color:#fff;">We&#39;re currently booking gigs and events</span></p>       <p>
+      <p>Kierononon are a 3-piece  brutaltechnopunk outfit, with goatboy on guitars, floatstarpx on bass/drum programming, and orta keyboard/decks/toys. We operate a three-pronged vocal assault, and we do not have a drummer. We formed in 2006 when we were drunk at a party. It was cool anyway, we drew loads of pictures of logos for the band.</p> 
+      <p> In the time between then and now, we have recorded 4 EPs and now a full length album, and we&#39;ve done a whole bunch of gigs. We still come up with our best ideas when we&#39;re drunk at parties. Our new album is awesome. It&#39;s called &quot;There&#39;s this Dragon&quot;, and you can hear it on our website here.</p> 
+      <p>We&#39;re currently booking gigs and events</p>
 
         <div class=" alpha grid_2 player">
-          <a href="mp3s/02 March Of The Bugs.mp3" class="sm2_button" title="play March of the Bugs" >March of the Bugs</a>
+          <a href="https://btp4.s3.amazonaws.com/mp3s/dragon/02 March Of The Bugs.mp3" class="sm2_button" title="play March of the Bugs" >March of the Bugs</a>
         </div>
         <div class="grid_2 player">
-          <a href="mp3s/05 No Chicks, No Beer.mp3" class="sm2_button" >No Chicks, No Beer</a>
+          <a href="https://btp4.s3.amazonaws.com/mp3s/dragon/05 No Chicks, No Beer.mp3" class="sm2_button" >No Chicks, No Beer</a>
         </div>
         <div class=" omega grid_2 player">
-          <a href="mp3s/06 Megaman 9.mp3" class="sm2_button" href="#">Megaman 9</a>
+          <a href="https://btp4.s3.amazonaws.com/mp3s/dragon/06 Megaman 9.mp3" class="sm2_button" href="#">Megaman 9</a>
         </div>
 
       </div>
@@ -48,23 +50,23 @@
       <hr>
       <div class="clear"></div>
       <div class="grid_4 read">
-     <img src = "/assets/komm/thumbs/issue_<%= @latest_komm %>.jpeg" id="current_issue" alt="current kierononon kommunique issue">
+     <img src = "https://btp4.s3.amazonaws.com/komm/thumbs/issue_<%= @latest_komm %>.jpeg" id="current_issue" alt="current kierononon kommunique issue">
       <h3>Kierononon Kommunique</h3>
     </div>
 
     <div class=" article grid_4 watch">
-      <a rel="shadowbox;width=853;height=505;player=swf" title="Kieronononon - March of the Bugs" href="http://www.youtube.com/v/ZiBqaZb09to&hl=en&fs=1&rel=0&autoplay=1&amp;hl=en&amp;fs=1&amp;rel=0&amp;autoplay=1&amp;fmt=22"> <img src="assets/images/youtube.jpg"  alt="Youtube"></a>
+      <a rel="shadowbox;width=853;height=505;player=swf" title="Kieronononon - March of the Bugs" href="http://www.youtube.com/v/ZiBqaZb09to&hl=en&fs=1&rel=0&autoplay=1&amp;hl=en&amp;fs=1&amp;rel=0&amp;autoplay=1&amp;fmt=22"> <img src="https://btp4.s3.amazonaws.com/images/youtube.jpg"  alt="Youtube"></a>
 
       <h3>Watch our vids</h3>
     </div>
 
     <div class="article grid_4 hole">
-      <img id = "khole" src="assets/images/kholed.png" alt="Kholed">
+      <img id = "khole" src="https://btp4.s3.amazonaws.com/images/kholed.png" alt="Kholed">
 
       <div id="khole_banner">
-        <img src="assets/images/kholed1.jpg" alt="Kholed1">
-        <img src="assets/images/kholed2.jpg" style="display:none" alt="Kholed2">
-        <img src="assets/images/kholed3.jpg" style="display:none" alt="Kholed3">
+        <img src="https://btp4.s3.amazonaws.com/images/kholed1.jpg" alt="Kholed1">
+        <img src="https://btp4.s3.amazonaws.com/images/kholed2.jpg" style="display:none" alt="Kholed2">
+        <img src="https://btp4.s3.amazonaws.com/imagesb/kholed3.jpg" style="display:none" alt="Kholed3">
       </div>
       <div class="clear"></div>
       <h3>Got Kholed lately?</h3>
