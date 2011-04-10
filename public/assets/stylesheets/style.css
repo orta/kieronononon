@@ -61,6 +61,7 @@ h1,h2,h3,h4,#sb-title-inner {
 ul.nav li{
 	display: inline-block;
 	margin: 0;
+	zoom: 1;
 }
 
 ul.main {
