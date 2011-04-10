@@ -34,6 +34,9 @@ get '/media' do
   erb :media
 end
 
+get '/video' do
+  erb :video
+end
 
 get /komm$|read/ do
   redirect "kommunique"
@@ -49,13 +52,13 @@ get '/kommunique' do
     { :pdf => true, :description => "Issue 6 is green! Why? Well that's not actually explained, we can assure you though, there is an explanation that we shall explain. Sometime. This issue has too much to talk about in the space we have left!"},
     { :pdf => true, :description => "Issue 7 Kieronononon discuss Pokemon again, give out some tour stories, KHole some famous guys and review a review."},
     { :pdf => true, :description => "Issue 8 KiERonononon get near the queen, get some emo poetry and compare some stuff."},
-    { :pdf => false, :description => "Issue 9 Kierononon look into psychology, their new iTunes LP and talk about the meaning of life."},
+    { :pdf => false,:description => "Issue 9 Kierononon look into psychology, their new iTunes LP and talk about the meaning of life."},
     { :pdf => true, :description => "Issue 10 Kierononon apologise for once, talk about the new stuff and kompare facial hair. "}
   ]
   erb :read
 end
 
-get '/khole' do
+get /khole$|kholed/ do
   erb :khole
 end
 

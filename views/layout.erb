@@ -64,13 +64,14 @@
               <![endif]--> 
         </div> 
         <ul class="nav main"> 
-          <li><a href="/">HOME</a></li> 
-          <li><a href="/music">MUSIC</a></li> 
-          <li><a href="/kommunique">READ</a></li> 
-          <li><a href="/band">BAND</a></li> 
-          <li><a href="/media">MEDIA</a></li> 
-          <!-- <li><a href="pics">PICS</a></li>  --> 
-          <li><a  id="khole-nav" href="/khole">KHOLED</a></li> 
+          <li id="home"><a href="/">HOME</a></li> 
+          <li id="music"><a href="/music">MUSIC</a></li> 
+          <li id="read"><a href="/read">READ</a></li> 
+          <li id="band"><a href="/band">BAND</a></li> 
+          <li id="media"><a href="/media">MEDIA</a></li> 
+          <li id="video"><a href="/video">VIDEO</a></li> 
+          <!-- id="" <li><a href="pics">PICS</a></li>  --> 
+          <li id="kholed"><a href="/kholed">KHOLED</a></li> 
         </ul> 
         
         <ul class="nav"> 
@@ -89,6 +90,7 @@
     <script>
       $(document).ready(function() {
         $(".logo").addClass("done");
+        var path = document.location.pathname
       });
     </script>
     </div>

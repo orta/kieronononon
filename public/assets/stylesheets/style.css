@@ -27,6 +27,9 @@ body {
   background-color: black;
   min-size: 960px;
   margin-bottom: 20px;
+  background: url(../images/body-bg.png) repeat-x;
+  background-color:black;
+  
 }
 h1,h2,h3,h4,#sb-title-inner {
   font-family: "aldo",sans-serif !important;
@@ -34,12 +37,7 @@ h1,h2,h3,h4,#sb-title-inner {
 .info li {
   list-style: none;
 }
-.header {
-  display: block;
-  background: url(../images/header-bg.png) repeat-x;
-  height: 64px;
-  margin-bottom: 32px;
-}
+
 .header .logo {
   position: absolute;
   top: 10px;left :10px;
@@ -53,16 +51,16 @@ h1,h2,h3,h4,#sb-title-inner {
   -webkit-transform: scale(0.7) rotate(340deg);
   -moz-transform: scale(0.7) rotate(340deg);
 }
+
 .header ul.nav{
 	clear: both;
 	text-align: center;
-	margin-top: 6px;
 }
 
 .header ul.nav li{
 	display: inline-block;
-
 }
+
 .header ul#subnav li a{
 	padding-top: 16px;
 	color:#747474;
@@ -82,8 +80,14 @@ ul.main {
   list-style-type: none;
   font-family: "aldo",sans-serif;
   font-size: 3em;
+  margin-bottom: 6px;
+  margin-top: 0;
 }
-
+ul.main li{
+  margin:0;
+  padding: 0 12px 0 12px;
+  
+}
 ul.main li a:visited {
   color: #2C2C2C;
 }
@@ -97,19 +101,11 @@ ul.main li a {
   -moz-user-select: none;
   -webkit-user-select: none;
 }
-#nav>ul>li a:hover {
-  background: url(../images/header-hover-bg.png) repeat-x;
-  color: black;
-}
-#nav>ul>li a:active,#nav ul>li a.active {
-  -moz-box-shadow: inset 0 5px 1em #793F08;
-  -webkit-box-shadow: inset 0 5px 1em #793F08;
-  position: relative;
-}
-#nav>ul>li:last-child a {
-  border-right: none;
-}
 
+ul.sub {
+  margin-bottom: 12px;
+  margin-top: 12px;
+}
 #control-template {
  display:none;
 }
