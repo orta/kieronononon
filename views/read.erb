@@ -5,7 +5,7 @@
   -webkit-box-shadow: inset 0 5px 1em #793F08;
 }
 
-.container_12{
+.section{
   color: white;
 }
 .komm{
@@ -19,9 +19,6 @@
 .article{
   color: white;
 } 
-.section{
-  color: black;
-}
 
 .image {
   position: relative;
@@ -77,15 +74,16 @@
 <div class="article">
   <div class="section container_12">
     <h1>Kierononononn Kommunique</h1>
-    <div id="komm_heading" >Kieronononon's secret-ish Kommuniques to anyone who dares read</div>
+    <hr/>
+    <!-- <div id="komm_heading" >Kieronononon's secret-ish Kommuniques to anyone who dares read</div> -->
   </div>
   <div class="empty">
-    <% i = 0; black = true %>
-    <% @komms.each do |komm| %>
-    <% i = i + 1 %>
+    <% i = @komms.count + 1; black = false %>
+    <% @komms.reverse.each do |komm| %>
+    <% i = i - 1 %>
     <% issue_num = i > 9 ? i : "0#{i}" %>
 
-    <% if( i % 2 == 1) %>
+    <% if( i % 2 == 0) %>
       <% if black %>
     <div class="clear"></div></div><div class = "issue container_12">
       <% black = false %>

@@ -15,7 +15,7 @@ get '/' do
     "assets/images/banner/banner8.jpg",
     "assets/images/banner/banner9.jpg"] 
   @latest_komm = 10
-  erb :index  
+  erb :index,  { :locals => {:title => "index"}}
 end
 
 get '/ajax/music' do
