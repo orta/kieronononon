@@ -38,10 +38,6 @@ get '/video' do
   erb :video
 end
 
-get /komm$|read/ do
-  redirect "kommunique"
-end
-
 get '/kommunique' do
   @komms = [
     { :pdf => true, :description => "Issue 1 The issue that started it all, beautiful and simple, find out about; Kierononon's favourite obscure Pokemon, how we spend our money and what they were doing on reality-TV hit Shipwrecked: Battle of the Islands 2008.<br/>Rockin!"},
@@ -58,10 +54,14 @@ get '/kommunique' do
   erb :read
 end
 
-get /khole$|kholed/ do
-  erb :khole
+get '/komplaint' do 
+    erb :komplaints
 end
 
 get '/gift' do
+  erb :gift
+end
+
+get '/email' do
   erb :gift
 end
