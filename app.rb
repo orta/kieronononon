@@ -77,5 +77,5 @@ get '/email' do
        :domain         => ENV['SENDGRID_DOMAIN'],
        :authentication => :plain })
   
-  erb :gift
+  erb :thanks
 end
