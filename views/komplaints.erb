@@ -1,20 +1,76 @@
 <style type="text/css" media="screen">
-  body{
-    background: url(https://btp4.s3.amazonaws.com/images/komplaints.jpg) center 0px  no-repeat;
-  }
-  .sub, .footer {
-    display: none;
-  }
-  center{
-    margin-top: 300px;
-  }
+@font-face {
+    font-family: 'VAG-HandWritteVAG-HandWritten';
+    src: url('/assets/fonts/VAG-HandWritten-webfont.eot');
+    src: url('/assets/fonts/VAG-HandWritten-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/assets/fonts/VAG-HandWritten-webfont.woff') format('woff'),
+         url('/assets/fonts/VAG-HandWritten-webfont.ttf') format('truetype'),
+         url('/assets/fonts/VAG-HandWritten-webfont.svg#VAG-HandWritteVAG-HandWritten') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body{
+  background: url(https://btp4.s3.amazonaws.com/images/komplaints.jpg) center 0px  no-repeat;
+}
+.sub, .footer {
+  display: none;
+}
+center{
+  margin-top: 300px;
+}
+
+form div{
+  height:166px ;
+  width:525px ;
+  text-align: left;  
+}
+
+div#upper{
+  background: url(https://btp4.s3.amazonaws.com/images/name_email.png) no-repeat;
+}
+
+div#upper input{
+  margin-top: 65px;
+  width:220px;
+  margin-left: 20px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  font-family: 'VAG-HandWritteVAG-HandWritten';
+  font-size: 34px;
+  
+}
+
+div#lower{
+  background: url(https://btp4.s3.amazonaws.com/images/komplaint_paper.png) no-repeat;
+}
+
+div#lower textarea{
+  margin-top: 55px;
+  margin-left: 20px;
+  width:450px;
+  height: 64px;
+  font-family: 'VAG-HandWritteVAG-HandWritten';
+  font-size: 28px;
+  padding: 4px;
+  
+  background-color: transparent;
+  border: none;
+}
+
 </style> 
 
 <center>   
   <form action="/email" method="get" accept-charset="utf-8">
-    <img src="https://btp4.s3.amazonaws.com/images/name_email.png"><br/>
-    
-    <img src="https://btp4.s3.amazonaws.com/images/komplaint_paper.png">  <br/>  
+    <div id="upper">
+      <input id="name" name="name" >
+      <input type="email" id="email"name="email">
+    </div>
+    <div id="lower">
+      <textarea name="komplaint"></textarea>
+    </div>
     <input type="submit" value="submit">
   </form>
 
