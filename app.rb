@@ -1,7 +1,7 @@
 require 'rubygems' 
 require 'sinatra' 
 require "sinatra/reloader"
-require 'pony'
+require "pony_heroku"
 
 get '/' do
   @slideshow =[
@@ -64,25 +64,29 @@ get '/gift' do
 end
 
 get '/email' do
-    puts "HELLO EMAIL"
-   puts ENV['SENDGRID_USERNAME'] +  " " + ENV['SENDGRID_PASSWORD'] + " " +  ENV['SENDGRID_DOMAIN']
+    puts ""
    
    if !params["email"] || !params["komplaint"] || !params["name"]
      return erb :komplaints
    end
    
-   Pony.mail(:to => 'roxxor2mail@gmail.com', :from => params["email"], :subject => "komplaint from #{ params["name"] }", :body => "
-   =========
-   #{params['komplaint']}
-   =========",
-   :via_options => {
-     :address              => 'smtp.gmail.com',
-     :port                 => '587',
-     :enable_starttls_auto => true,
-     :domain               => "localhost.localdomain",
-     :user_name      => ENV['GMAIL_USERNAME'],
-     :password       => ENV['GMAIL_PASS'],
-     :authentication => :plain })
+   Pony.mail(:to=>"roxxor2mail@gmail.com", 
+              :from => params["email"], 
+              :subject=> "komplaint from #{ params["name"] }",
+              :body =>  "
+               =========
+               #{params['komplaint']}
+               =========
+               ",
+              :via => :smtp, :smtp => {
+                :host       => 'smtp.gmail.com',
+                :port       => '587',
+                :user       => ENV['GMAIL_USERNAME'],
+                :password   => ENV['GMAIL_PASS'],
+                :auth       => :plain,
+                :domain     => "brutaltechnopunk.com"
+               }
+             )
 
   erb :thanks
 end
