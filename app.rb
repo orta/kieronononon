@@ -64,6 +64,8 @@ get '/gift' do
 end
 
 get '/email' do
+   puts ENV['SENDGRID_USERNAME'] +  " " + ENV['SENDGRID_PASSWORD'] + " " +  ENV['SENDGRID_DOMAIN']
+   
    if !params["email"] || !params["komplaint"] || !params["name"]
      erb :komplaints
      return
