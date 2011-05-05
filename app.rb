@@ -1,6 +1,7 @@
 require 'rubygems' 
 require 'sinatra' 
 require "sinatra/reloader"
+require 'pony'
 
 get '/' do
   @slideshow =[
@@ -67,7 +68,14 @@ get '/email' do
    Pony.mail(:to => 'roxxor2mail@gmail.com', :from => params["email"], :subject => "komplaint from #{ params["name"] }", :body => "
    =========
    #{params['komplaint']}
-   =========")
+   =========",
+   :via_options => {
+       :address        => 'smtp.sendgrid.net',
+       :port           => '25',
+       :user_name      => ENV['SENDGRID_USERNAME'],
+       :password       => ENV['SENDGRID_PASSWORD'],
+       :domain         => ENV['SENDGRID_DOMAIN'],
+       :authentication => :plain })
   
   erb :gift
 end
