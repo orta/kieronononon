@@ -64,6 +64,7 @@ get '/gift' do
 end
 
 get '/email' do
+    puts "HELLO EMAIL"
    puts ENV['SENDGRID_USERNAME'] +  " " + ENV['SENDGRID_PASSWORD'] + " " +  ENV['SENDGRID_DOMAIN']
    
    if !params["email"] || !params["komplaint"] || !params["name"]
