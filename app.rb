@@ -68,8 +68,7 @@ get '/email' do
    puts ENV['SENDGRID_USERNAME'] +  " " + ENV['SENDGRID_PASSWORD'] + " " +  ENV['SENDGRID_DOMAIN']
    
    if !params["email"] || !params["komplaint"] || !params["name"]
-     erb :komplaints
-     return
+     return erb :komplaints
    end
    
    Pony.mail(:to => 'roxxor2mail@gmail.com', :from => params["email"], :subject => "komplaint from #{ params["name"] }", :body => "
