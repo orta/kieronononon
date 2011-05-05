@@ -64,6 +64,10 @@ get '/gift' do
 end
 
 get '/email' do
+   if !params["email"] || !params["komplaint"] || !params["name"]
+     erb :komplaints
+     return
+   end
    
    Pony.mail(:to => 'roxxor2mail@gmail.com', :from => params["email"], :subject => "komplaint from #{ params["name"] }", :body => "
    =========
