@@ -77,12 +77,13 @@ get '/email' do
    #{params['komplaint']}
    =========",
    :via_options => {
-       :address        => 'smtp.sendgrid.net',
-       :port           => '25',
-       :user_name      => ENV['SENDGRID_USERNAME'],
-       :password       => ENV['SENDGRID_PASSWORD'],
-       :domain         => ENV['SENDGRID_DOMAIN'],
-       :authentication => :plain })
-  
+     :address              => 'smtp.gmail.com',
+     :port                 => '587',
+     :enable_starttls_auto => true,
+     :domain               => "localhost.localdomain",
+     :user_name      => ENV['GMAIL_USERNAME'],
+     :password       => ENV['GMAIL_PASS'],
+     :authentication => :plain })
+
   erb :thanks
 end
