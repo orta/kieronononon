@@ -24,9 +24,11 @@
   <div class="section container_12" id="page-content">
 
     <div class=" grid_6 content-cd">
-      <img src="https://btp4.s3.amazonaws.com/images/dragon-cd.jpeg" id="case" alt="Jewel Ituneslp">
-      <img src="https://btp4.s3.amazonaws.com/images/cd.jpg" id="CD"  alt="Cd">
-      <h3>Click to download our free iTunes EP or Music</h3>
+      <a href='music'>
+        <img src="https://btp4.s3.amazonaws.com/images/dragon-cd.jpeg" id="case" alt="Jewel Ituneslp">
+        <img src="https://btp4.s3.amazonaws.com/images/cd.jpg" id="CD"  alt="Cd">
+        <h3>Click to download our free iTunes EP or Music</h3>
+      </a>
     </div>
 
     <div class="article grid_6">
@@ -120,17 +122,17 @@ $(document).ready(function() {
 
 
 
-  $(".content-cd").click(function(i){
-    $.get('ajax/music', function(data) {
-      Shadowbox.open({
-        content:    data,
-        player:     "html",
-        title:      "Kierononononon Music",
-        height:     550,
-        width:      880
-      });
-    });
-  });
+  // $(".content-cd").click(function(i){
+  //   $.get('ajax/music', function(data) {
+  //     Shadowbox.open({
+  //       content:    data,
+  //       player:     "html",
+  //       title:      "Kierononononon Music",
+  //       height:     550,
+  //       width:      880
+  //     });
+  //   });
+  // });
 
   $(".hole").click(function(i){
     window.location.href = "khole"
