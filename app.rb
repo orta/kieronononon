@@ -23,6 +23,10 @@ get '/ajax/music' do
   erb :ajax_cds, { :layout => false }
 end
 
+get 'khole-intro.php' do
+  erb :media
+end
+
 get '/music' do
   erb :music  
 end
