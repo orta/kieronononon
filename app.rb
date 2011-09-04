@@ -6,6 +6,7 @@ require "pony_heroku"
 get '/' do
   @slideshow =[
     "https://btp4.s3.amazonaws.com/images/banner/dragons_banner.jpg",
+    "https://btp4.s3.amazonaws.com/images/banner/komplaintsdept.jpg",
     "https://btp4.s3.amazonaws.com/images/banner/banner1.jpg",
     "https://btp4.s3.amazonaws.com/images/banner/banner2.jpg",
     "https://btp4.s3.amazonaws.com/images/banner/banner3.jpg",

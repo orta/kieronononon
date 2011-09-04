@@ -10,12 +10,14 @@
 <center>
   <div class="section" id="headline">
     <div id="banner">
+      <a href="/music">
       <% i = 0 %>
       <% @slideshow.shuffle.each do |banner| %>
         <img src="<%= banner %>" width="1040" height="500" alt="Banner1" <%= i > 0 ? "style='display:none'" : ""%> >
         <% i = i + 1 %>
         <% if (i == 5) then break end %>
       <% end %>
+      </a>
     </div> 
   </div>
 </div>
@@ -41,10 +43,10 @@
           <a href="https://btp4.s3.amazonaws.com/mp3s/dragon/02 March Of The Bugs.mp3" class="sm2_button" title="play March of the Bugs" >March of the Bugs</a>
         </div>
         <div class="grid_2 player">
-          <a href="https://btp4.s3.amazonaws.com/mp3s/dragon/05 No Chicks, No Beer.mp3" class="sm2_button" >No Chicks, No Beer</a>
+          <a href="https://btp4.s3.amazonaws.com/mp3s/fox.mp3" class="sm2_button" >Fox To The Hounds</a>
         </div>
         <div class=" omega grid_2 player">
-          <a href="https://btp4.s3.amazonaws.com/mp3s/dragon/06 Megaman 9.mp3" class="sm2_button" href="#">Megaman 9</a>
+          <a href="https://btp4.s3.amazonaws.com/mp3s/dragon/robot.mp3" class="sm2_button" href="#">Do the Robot</a>
         </div>
 
       </div>
