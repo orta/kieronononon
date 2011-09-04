@@ -9,16 +9,16 @@
 </style>
 <center>
   <div class="section" id="headline">
+    <a href="/music">
     <div id="banner">
-      <a href="/music">
       <% i = 0 %>
       <% @slideshow.shuffle.each do |banner| %>
         <img src="<%= banner %>" width="1040" height="500" alt="Banner1" <%= i > 0 ? "style='display:none'" : ""%> >
         <% i = i + 1 %>
         <% if (i == 5) then break end %>
       <% end %>
-      </a>
     </div> 
+    </a>
   </div>
 </div>
 </center>
