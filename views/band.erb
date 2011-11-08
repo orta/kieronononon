@@ -9,60 +9,105 @@ hr{
   -moz-box-shadow: inset 0 5px 1em #793F08;
   -webkit-box-shadow: inset 0 5px 1em #793F08;
 }
-</style>
 
+#profiles h3 {
+  font-size: 3em;
+}
+
+img.selected {
+  border: 2px solid #C55900;
+  margin: -2px;
+}
+
+</style>
+<script>
+  jQuery(function(){
+    $("#thumbs img").hover(function( el ){
+      var profile_id = $(this).attr("id");
+      $("#thumbs img").removeClass("selected");
+      $(this).addClass("selected");
+      $("#profiles > div").hide();
+      $("#profile" + profile_id).show();
+    }, function(){})
+    
+    var index = Math.floor (Math.random() * 4);
+    var names = ["orta", "raff", "float", "goat"];
+    $("#_" + names[index]).addClass("selected");
+    $("#profile_" + names[index]).show();
+  })
+  
+</script>
 <div class="article">
  <div class="section container_12">
    <h1>Meet the band (<a href="http://twitter.com/kieronononon">@Kieronononon</a>)</h1>
    <p></p>
    <hr />
-   
-   <div class="grid_2">
-    <img src="https://btp4.s3.amazonaws.com/images/band/orta.jpg" alt = "orta therox of Kieronononon">
-   </div>
-   <div class="grid_2">
-     <h3>orta therox</h3>
-     <p><a href="http://twitter.com/orta">@orta</a></p>
-     <div id="band_orta" ><p><strong>Powers</strong>: Vocals, keyboard and guitar hero Controller, laptops, fire extinguisher, misc toys.</p>
-
-     <p><strong>What we say</strong>: orta is a loud northern monkey who makes noises with whatever he can get his hands on. orta's favourite things include beans and bread, hair-butter and carrots.</p>
+   <div id="thumbs">
+     <div class="grid_4">
+      <img src="http://btp4.s3.amazonaws.com/images/profile_orta.jpg" id="_orta" alt = "orta therox of Kieronononon">
+      <br /><br />
+      <img src="https://btp4.s3.amazonaws.com/images/profile_float.jpg" id="_float" alt = "floatstarpx of Kieronononon">
      </div>
-   </div>
-
-   <div class="grid_2">
-    <img src="https://btp4.s3.amazonaws.com/images/band/px.jpg" alt = "floatstarpx of Kieronononon">
-   </div>
-   <div class="grid_2">
-     <h3>(float*)(p->x)</h3>
-     <p><a href="http://twitter.com/floatstarpxlol">@floatstarpxlol</a></p>
-     <div id="band_px" ><p><strong>Powers</strong>: Bass, drum pads, vocals.</p>
-
-     <p><strong>What we say</strong>: PX is responsible for both the "low-end" of Kieronononon's sound and the "no end" of dubious one-liner style jokes. He also does the cheesy 90s-style video editing for all of our many many videos.</p>
+     <div class="grid_4">
+       <img src="https://btp4.s3.amazonaws.com/images/profile_goat.jpg" id="_goat" alt = "goat boy of Kieronononon">
+       <br /><br />
+       <img src="https://btp4.s3.amazonaws.com/images/profile_raff.jpg" id="_raff" alt = "rafferty of Kieronononon">
      </div>
-   </div>
-   
-   <div class="grid_2">
-    <img src="https://btp4.s3.amazonaws.com/images/band/goat.jpg" alt = "goat boy of Kieronononon">
-   </div>
-   <div class="grid_2">
-     <h3>Goat Buoy</h3>
-     <div id="band_goat" ><p><strong>Powers</strong>: Guitar and a million pedals, vocals.</p>
+   </div>   
+   <div class="grid_4" id="profiles">
 
-     <p><strong>What we say</strong>: Ooohh yeah sexy Goaty beast - but watch out, he may deliver you an epic insult. Goatboy switches guitars often, because he is so manly. Only a manly man could switch guitar as often as Goatboy.</p>
+      <center>
+        <img  src="https://btp4.s3.amazonaws.com/images/band/klogo-shiny.jpg" alt="Kierononon Logo" />
+      </center>
+    
+     <div id="profile_orta" style="display:none">
+       <h3>orta therox</h3>
+       <p><a href="http://twitter.com/orta">@orta</a></p>
+       <div id="band_orta" ><p><strong>Powers</strong>: Vocals, keytar and guitar hero Controller, laptops, fire extinguisher, misc toys.</p>
+
+       <p><strong>What we say</strong>: orta is a loud northern monkey who makes noises with whatever he can get his hands on. orta's favourite things include beans and bread, hair-butter and carrots.</p>
+       </div>
      </div>
+
+     <div id="profile_float" style="display:none">
+       <h3>(float*)(p->x)</h3>
+       <p><a href="http://twitter.com/floatstarpxlol">@floatstarpxlol</a></p>
+       <div id="band_px" ><p><strong>Powers</strong>: Bass, drum pads, minikeyboards, vocals.</p>
+
+       <p><strong>What we say</strong>: PX is responsible for both the "low-end" of Kieronononon's sound and the "no end" of dubious one-liner style jokes. He also does the cheesy 90s-style video editing for all of our many many videos.</p>
+       </div>
+     </div>
+     
+     <div id="profile_goat" style="display:none">
+       <h3>Goat Buoy</h3>
+       <p><a href="http://twitter.com/goatbuoy">@goatbuoy</a></p>
+       
+       <div id="band_goat" ><p><strong>Powers</strong>: Guitar and a million million pedals, vocals.</p>
+
+       <p><strong>What we say</strong>: Ooohh yeah sexy Goaty beast - but watch out, he may deliver you an epic insult. Goatboy switches guitars often, because he is so manly. Only a manly man could switch guitar as often as Goatboy.</p>
+       </div>
+     </div>
+     
+     
+     <div id="profile_raff" style="display:none">
+       <h3>Rafferty</h3>
+       <p><a href="http://twitter.com/raffmonkey">@raffmonkey</a></p>
+       
+       <div id="band_goat" ><p><strong>Powers</strong>: Keyboard and the weird theramin thing.</p>
+
+       <p><strong>What we say</strong>: It's the new guy, we wonder if he knew how much of a ballache being in a brutaltechnopunk band is? anyway, he's a damn good keyboard player, far better than that orta guy. Who even let him have an instrument anyway?</p>
+       </div>
+     </div>     
    </div>
 
-   <div class="grid_12" style="margin:32px 10px">
-    <center>
-      <img  src="https://btp4.s3.amazonaws.com/images/band/klogo-shiny.jpg" alt="Kierononon Logo" />
-    </center>
+   <div class="grid_12" style="margin:10px 10px">
    </div>
 
    <div class="grid_4">
     <div  id="band_column1" >
       <h2> 	What&#39;s all this then?</h2> 
-      <p>Kierononon are a 3-piece brutaltechnopunk outfit, with goatboy on guitars, floatstarpx on bass/drum programming, and orta keyboard/decks/toys. We operate a three-pronged vocal assault, and we do not have a drummer. We formed in 2006 when we were drunk at a party. It was cool anyway, we drew loads of pictures of logos for the band.</p> 
-      <p>In the time between then and now, we have recorded 4 EPs and now a full length album, and we&#39;ve done a whole bunch of gigs. We still come up with our best ideas when we&#39;re drunk at parties. Our new album is awesome. It&#39;s called &quot;There&#39;s this Dragon&quot;, and you can hear it on our website here.</p> 
+      <p>Kierononon are a 3-piece brutaltechnopunk outfit, with Goatboy on guitars, Floatstarpx on bass/drum programming,  orta attempting keytar/decks/toys and Rafferty rocking the keyboards/theramin . We operate a four-pronged vocal assault, and we do not have a drummer. We formed in 2006 when we were drunk at a party. It was cool anyway, we drew loads of pictures of logos for the band.</p> 
+      <p>In the time between then and now, we have recorded 5 EPs and now a full length album, and we&#39;ve done a whole bunch of gigs. We still come up with our best ideas when we&#39;re drunk at parties. Our new album is awesome. It&#39;s called &quot;There&#39;s this Dragon&quot;, and you can hear it on our website here. And even newer than that is our EP Komplaints Department, check it in <a href="music">music</a></p> 
     </div>
   </div>
    
@@ -70,15 +115,13 @@ hr{
      <div id="band_column2" >
        <h2>There&#39;s this Dragon</h2> 
        <p>&quot;There&#39;s this Dragon&quot; is our first full-length album! It&#39;s got 10 tracks.</p> 
-       <p>Written, recorded and conceptualised by Kieronononon. Mixed and mastered by the awesome Ben Rafferty!</p>
+       <p>Written, recorded and conceptualised by Kieronononon. Mixed and mastered by the awesome Rafferty!</p>
        </div>
    </div>
    <div class="grid_4">
      <div id="band_column3" >
       <h2> 	Booking</h2> 
-      <p>We&#39;re currently booking for October (and beyond) 2010.. So give us an e-mail if you want us to play in your town! E-mail us at roxxor2mail@gmail.com and we&#39;ll do our best. We&#39;ll even play in your house for 2 beers or some potato waffles.</p> 
+      <p>We&#39;re currently booking for sometime soon.. So give us an e-mail if you want us to play in your town! E-mail us at roxxor2mail@gmail.com and we&#39;ll do our best. We&#39;ll even play in your house for 2 beers or some potato waffles.</p> 
      </div>
-    
    </div>
-   
 </div>
