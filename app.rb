@@ -1,7 +1,7 @@
-require 'rubygems' 
-require 'sinatra' 
+require 'rubygems'
+require 'sinatra'
 require "sinatra/reloader"
-require "pony_heroku"
+require_relative "pony_heroku"
 
 get '/' do
   @slideshow =[
@@ -15,7 +15,7 @@ get '/' do
     "https://btp4.s3.amazonaws.com/images/banner/banner6.jpg",
     "https://btp4.s3.amazonaws.com/images/banner/banner7.jpg",
     "https://btp4.s3.amazonaws.com/images/banner/banner8.jpg",
-    "https://btp4.s3.amazonaws.com/images/banner/banner9.jpg"] 
+    "https://btp4.s3.amazonaws.com/images/banner/banner9.jpg"]
   @latest_komm = 10
   erb :index,  { :locals => {:title => "index"}}
 end
@@ -29,11 +29,11 @@ get '/khole-intro.php' do
 end
 
 get '/music' do
-  erb :music  
+  erb :music
 end
 
 get '/band' do
-  erb :band  
+  erb :band
 end
 
 get '/media' do
@@ -60,7 +60,7 @@ get '/kommunique' do
   erb :read
 end
 
-get '/komplaint' do 
+get '/komplaint' do
     erb :komplaints
 end
 
@@ -70,13 +70,13 @@ end
 
 get '/email' do
     puts ""
-   
+
    if !params["email"] || !params["komplaint"] || !params["name"]
      return erb :komplaints
    end
-   
-   Pony.mail(:to=>"roxxor2mail@gmail.com", 
-              :from => params["email"], 
+
+   Pony.mail(:to=>"roxxor2mail@gmail.com",
+              :from => params["email"],
               :subject=> "komplaint from #{ params["name"] }",
               :body =>  "
                =========
